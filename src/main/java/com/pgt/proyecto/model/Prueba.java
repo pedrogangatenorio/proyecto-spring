@@ -1,6 +1,7 @@
 package com.pgt.proyecto.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -23,6 +24,16 @@ public class Prueba {
 	
 	private String nombre;
 	
+	private Date fecha;
+		
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}

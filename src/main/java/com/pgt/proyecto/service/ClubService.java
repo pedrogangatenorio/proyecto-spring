@@ -1,5 +1,8 @@
 package com.pgt.proyecto.service;
 
-public interface ClubService {
+import java.util.Date;
+import java.util.Map;
 
+public interface ClubService {
+	Map<String, Integer> getClasificacion(Date fecha);
 }
