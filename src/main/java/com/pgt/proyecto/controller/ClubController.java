@@ -1,7 +1,7 @@
 package com.pgt.proyecto.controller;
 
 import java.util.Date;
-import java.util.Iterator;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,14 +17,8 @@ public class ClubController {
 	ClubService clubService;
 	
 	@GetMapping
-	public String clasificacion(Date fecha) {
-		String s ="";
-		Iterator it = clubService.getClasificacion(new Date()).keySet().iterator();
-		while(it.hasNext()){
-			  String key = it.next().toString();
-			  s+="Clave: " + key + " -> Valor: " + clubService.getClasificacion(new Date()).get(key).toString();
-		}
-		return s;
+	public Map<String,Integer> clasificacion(Date fecha) {
+		return clubService.getClasificacion(new Date());
 	}
 }
 

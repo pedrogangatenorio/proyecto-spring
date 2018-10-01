@@ -1,5 +1,7 @@
 package com.pgt.proyecto.service;
 
-public interface ResultadoService {
+import java.util.Map;
 
+public interface ResultadoService {
+	Map<String,Integer> ranking(String nombre);
 }
