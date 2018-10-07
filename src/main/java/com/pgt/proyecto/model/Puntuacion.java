@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 public class Puntuacion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer idPuntuacion;
+	private Integer id;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Prueba prueba;
@@ -36,12 +36,12 @@ public class Puntuacion {
 		this.puntos = puntos;
 	}
 
-	public Integer getIdPuntuacion() {
-		return idPuntuacion;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setIdPuntuacion(Integer idPuntuacion) {
-		this.idPuntuacion = idPuntuacion;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public Prueba getPrueba() {

@@ -1,7 +1,6 @@
 package com.pgt.proyecto.model;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,7 +13,7 @@ import javax.persistence.OneToMany;
 public class Prueba {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer idPrueba;
+	private Integer id;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "prueba")
 	private List<Resultado> resultados = new ArrayList<>();
@@ -22,32 +21,34 @@ public class Prueba {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "prueba")
 	private List<Puntuacion> puntuaciones = new ArrayList<>();
 	
-	private String nombre;
+	private String name;
+
+	private String date;
 	
-	private Date fecha;
-		
-	public Date getFecha() {
-		return fecha;
+	public Prueba() {}
+
+	public Integer getId() {
+		return id;
 	}
 
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getName() {
+		return name;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public Integer getIdPrueba() {
-		return idPrueba;
+	public String getDate() {
+		return date;
 	}
 
-	public void setIdPrueba(Integer idPrueba) {
-		this.idPrueba = idPrueba;
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 	public List<Resultado> getResultados() {

@@ -19,22 +19,24 @@ public class Resultado {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Prueba prueba;
 	
-	private Integer tiempo;
+	private Integer seconds;
 	
-	public Integer getTiempo() {
-		return tiempo;
-	}
-
-	public void setTiempo(Integer tiempo) {
-		this.tiempo = tiempo;
-	}
-
+	public Resultado() {}
+	
 	public Integer getIdResultado() {
 		return idResultado;
 	}
 
 	public void setIdResultado(Integer idResultado) {
 		this.idResultado = idResultado;
+	}
+
+	public Integer getSeconds() {
+		return seconds;
+	}
+
+	public void setSeconds(Integer seconds) {
+		this.seconds = seconds;
 	}
 
 	public Corredor getCorredor() {

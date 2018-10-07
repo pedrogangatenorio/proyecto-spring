@@ -15,27 +15,27 @@ public class Club {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer idClub;
+	private Integer id;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "club")
 	private List<Corredor> corredores = new ArrayList<>();
 	
-	private String nombre;
-		
-	public String getNombre() {
-		return nombre;
+	private String name;
+
+	public Integer getId() {
+		return id;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
-	public Integer getIdClub() {
-		return idClub;
+	public String getName() {
+		return name;
 	}
 
-	public void setIdClub(Integer idClub) {
-		this.idClub = idClub;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public List<Corredor> getCorredores() {

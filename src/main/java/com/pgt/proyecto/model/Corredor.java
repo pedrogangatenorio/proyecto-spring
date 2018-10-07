@@ -24,24 +24,16 @@ public class Corredor {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Club club;
 	
-	private String nombre;
+	private String name;
 	
-	private Integer edad;
+	private Integer year;
 	
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+	public Corredor() {}
 	
-	public Integer getEdad() {
-		return edad;
-	}
-
-	public void setEdad(Integer edad) {
-		this.edad = edad;
+	public Corredor(Integer idCorredor,String name, Integer year) {
+		this.idCorredor=idCorredor;
+		this.name=name;
+		this.year=year;
 	}
 
 	public Integer getIdCorredor() {
@@ -50,6 +42,22 @@ public class Corredor {
 
 	public void setIdCorredor(Integer idCorredor) {
 		this.idCorredor = idCorredor;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getYear() {
+		return year;
+	}
+
+	public void setYear(Integer year) {
+		this.year = year;
 	}
 
 	public List<Resultado> getResultados() {
