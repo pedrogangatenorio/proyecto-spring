@@ -22,10 +22,13 @@ public class PruebaMapperImpl implements PruebaMapper{
 
 	@Override
 	public PruebaDTO mapToDTO(Prueba model) {
-		PruebaDTO pruebadto = new PruebaDTO();
-		pruebadto.setId(model.getId());
-		pruebadto.setName(model.getName());
-		pruebadto.setDate(model.getDate());
+		PruebaDTO pruebadto=null;
+		if(model != null) {
+			pruebadto = new PruebaDTO();
+			pruebadto.setId(model.getId());
+			pruebadto.setName(model.getName());
+			pruebadto.setDate(model.getDate());
+		}
 		return pruebadto;
 	}
 

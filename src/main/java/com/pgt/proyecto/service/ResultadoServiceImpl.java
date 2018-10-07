@@ -47,7 +47,7 @@ public class ResultadoServiceImpl implements ResultadoService{
 
 	@Override
 	public ResultadoDTO findById(Integer id) {
-		return resultadomapper.mapToDTO(dao.findById(id).get());
+		return resultadomapper.mapToDTO(dao.findById(id).orElse(null));
 	}
 
 	@Override

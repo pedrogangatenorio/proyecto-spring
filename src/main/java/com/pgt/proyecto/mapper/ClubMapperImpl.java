@@ -19,9 +19,12 @@ public class ClubMapperImpl implements ClubMapper{
 
 	@Override
 	public ClubDTO mapToDTO(Club model) {
-		ClubDTO userdto = new ClubDTO();
-		userdto.setId(model.getId());
-		userdto.setName(model.getName());
+		ClubDTO userdto = null;
+		if(model != null) { 
+			userdto = new ClubDTO();
+			userdto.setId(model.getId());
+			userdto.setName(model.getName());
+		}
 		return userdto;
 	}
 

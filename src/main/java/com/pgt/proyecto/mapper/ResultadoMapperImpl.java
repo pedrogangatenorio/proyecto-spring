@@ -31,10 +31,13 @@ public class ResultadoMapperImpl implements ResultadoMapper{
 
 	@Override
 	public ResultadoDTO mapToDTO(Resultado model) {
-		ResultadoDTO resultadodto = new ResultadoDTO();
-		resultadodto.setId(model.getIdResultado());
-		resultadodto.setSeconds(model.getSeconds());
-		resultadodto.setIdRunner(model.getCorredor().getIdCorredor());
+		ResultadoDTO resultadodto = null;
+		if(model != null) {
+			resultadodto = new ResultadoDTO();
+			resultadodto.setId(model.getIdResultado());
+			resultadodto.setSeconds(model.getSeconds());
+			resultadodto.setIdRunner(model.getCorredor().getIdCorredor());
+		}
 		return resultadodto;
 	}
 

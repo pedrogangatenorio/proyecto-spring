@@ -33,7 +33,7 @@ public class CorredorServiceImpl implements CorredorService{
 
 	@Override
 	public CorredorDTO findById(Integer id) {
-		return corredormapper.mapToDTO(dao.findById(id).get());
+		return corredormapper.mapToDTO(dao.findById(id).orElse(null));
 	}
 
 	@Override

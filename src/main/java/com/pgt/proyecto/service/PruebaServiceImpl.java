@@ -24,7 +24,7 @@ public class PruebaServiceImpl implements PruebaService{
 
 	@Override
 	public PruebaDTO findById(Integer id) {
-		return mapper.mapToDTO(dao.findById(id).get());
+		return mapper.mapToDTO(dao.findById(id).orElse(null));
 	}
 
 	@Override

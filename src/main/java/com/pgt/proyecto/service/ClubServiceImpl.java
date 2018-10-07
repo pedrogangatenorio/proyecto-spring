@@ -23,7 +23,7 @@ public class ClubServiceImpl implements ClubService{
 
 	@Override
 	public ClubDTO findById(Integer id){
-		return mapper.mapToDTO(dao.findById(id).get());
+		return mapper.mapToDTO(dao.findById(id).orElse(null));
 	}
 
 	@Override

@@ -22,10 +22,13 @@ public class CorredorMapperImpl implements CorredorMapper{
 
 	@Override
 	public CorredorDTO mapToDTO(Corredor model) {
-		CorredorDTO corredordto = new CorredorDTO();
-		corredordto.setId(model.getIdCorredor());
-		corredordto.setName(model.getName());
-		corredordto.setYear(model.getYear());
+		CorredorDTO corredordto = null;
+		if(model != null) {
+			corredordto = new CorredorDTO();
+			corredordto.setId(model.getIdCorredor());
+			corredordto.setName(model.getName());
+			corredordto.setYear(model.getYear());
+		}
 		return corredordto;
 	}
 

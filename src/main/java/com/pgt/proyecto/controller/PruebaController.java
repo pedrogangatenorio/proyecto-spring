@@ -1,8 +1,10 @@
 package com.pgt.proyecto.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,8 +30,11 @@ public class PruebaController {
 	}
 
 	@GetMapping("/{id}")
-	public PruebaDTO findById(@PathVariable Integer id) {
-		return pruebaservice.findById(id);
+	public ResponseEntity<PruebaDTO> findById(@PathVariable Integer id) {
+	    return Optional
+	            .ofNullable( pruebaservice.findById(id) )
+	            .map( user -> ResponseEntity.ok().body(user) )          
+	            .orElseGet( () -> ResponseEntity.notFound().build());  
 	}
 
 	@PostMapping
